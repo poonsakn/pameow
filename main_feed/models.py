@@ -6,6 +6,7 @@ from django.utils import timezone
 class Post(models.Model):
     pub_date = models.DateTimeField('date published')
     caption_text = models.CharField(max_length=600)
+    image = models.ImageField(upload_to='cats')
 
     def was_published_recently(self):
         now = timezone.now()
